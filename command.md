@@ -2,7 +2,7 @@
 This show shows the deployment of kubernestes objects using Argocd a kubernetes continous delivery tool that uses Github as the the single source of truth
 
 # make sure you have a kubenrnte tool ready to work with 
-# for this project i choose minkune a single node cluster but for minkube to work there must be docker deskstop running on ur system
+# for this project i choose minikube a single node cluster but for minikube to work there must be docker deskstop running on ur system
 
 
 # or if the above does not installed
@@ -13,13 +13,13 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 kubectl version
 ====================
-# create a prpject folder 
- argocd-deployment-kubenrnetes
+# create a project folder 
+ argocd-deployment-kubernetes
  
 # start your minkube by running the command below
 minikube start
 
-# the command above get ur single node cluster ready coipled with the kubernetes cli interface call kubectl
+# the command above get ur single node cluster ready coupled with the kubernetes cli interface call kubectl
 
 # now run the command below
 
@@ -68,7 +68,7 @@ argocd-server-metrics                     ClusterIP   10.102.196.231   <none>   
 
 $ kubectl port-forward service/argocd-server -n argocd 8080:443
 
-
+# it will display below
 Forwarding from 127.0.0.1:8080 -> 8080
 
 
@@ -80,9 +80,9 @@ Forwarding from 127.0.0.1:8080 -> 8080
 
 
 # To get Credentials to login
-# The usernemae is admin but use the below to get the passowrd
+# The username is admin but use the below to get the passowrd
 
-kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d      ## On different terminal ##
 
 
 ## or another method
@@ -106,6 +106,12 @@ type: Opaque
 echo SklsN0llczB4SUJXYlVKag== | base64 -d 
 
 JIl7Ies0xIBWbUJj%  
+
+## Application deployed ##
+<img width="1917" height="859" alt="Image" src="https://github.com/user-attachments/assets/30383adf-7788-41cc-ad81-4b362dd0905d" />
+
+## Deployed Application on Argocd cluster ##
+<img width="1887" height="942" alt="Image" src="https://github.com/user-attachments/assets/731d0b92-92ab-4d71-a8e4-ea4e8c8f690b" />
 
 
 
