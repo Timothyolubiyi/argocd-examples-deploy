@@ -32,8 +32,11 @@ kubelet: Running
 apiserver: Running
 kubeconfig: Configured
 
-# to install argocd on kubernetes cluster to monitor and control your kuberntes worklow/workload
+# create namespace 
 
+kubectl create namespace argocd
+
+# to install argocd on kubernetes cluster to monitor and control your kuberntes worklow/workload
 
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
